@@ -1,5 +1,7 @@
 public class FastExponentiation {
-    // Find (a ^ b) % m.
+    // Find (a ^ b) % m. a, b & m are all integers.
+
+    // TC: O(log(b)) | SC: O(log(b))
     static int recPow(int a, int b, int m) {
         if (a == 0 || b == 0) {
             return a == 0 ? 0 : 1;
@@ -13,6 +15,7 @@ public class FastExponentiation {
         return (int) res;
     }
 
+    // TC: O(log(b)) | SC: O(1)
     static int iterPow(int a, int b, int m) {
         long res = 1;
         while (b > 0) {
