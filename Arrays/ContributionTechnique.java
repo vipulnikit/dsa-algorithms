@@ -1,6 +1,5 @@
+// Given an array A[] of integers, find sum of all subarrays sum.
 public class ContributionTechnique {
-    // Given an array A[] of integers, find sum of all subarrays sum.
-
     // TC: O(N) | SC: O(1)
     public static int contribution(int[] A) {
         int N = A.length, sum = 0;

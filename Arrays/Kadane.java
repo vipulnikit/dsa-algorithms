@@ -1,6 +1,5 @@
+// Given an array of integers A[], find the sum of the contiguous subarray within A[] with the largest sum. 
 public class Kadane {
-    // Given an array of integers A[], find the sum of the contiguous subarray within A[] with the largest sum. 
-
     // TC: O(N) | SC: O(1)
     public static int kadane(int[] A) {
         int N = A.length, ans = Integer.MIN_VALUE, sum = 0;
