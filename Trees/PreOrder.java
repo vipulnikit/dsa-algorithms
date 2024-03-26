@@ -3,7 +3,7 @@ import java.util.Stack;
 public class PreOrder {
     // TC: O(N) | SC: O(N)
     // TC = O(N) or O(height of tree) for skewed tree.
-    static void preOrderRec(TreeNode root) {
+    void preOrderRec(TreeNode root) {
         if (root == null)
             return;
         System.out.println(root.data);
@@ -12,7 +12,7 @@ public class PreOrder {
     }
 
     // TC: O(N) | SC: O(N)
-    static void preOrderItr(TreeNode root) {
+    void preOrderItr(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
         if (cur == null)
