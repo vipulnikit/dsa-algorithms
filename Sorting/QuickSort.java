@@ -3,35 +3,34 @@ import java.util.Random;
 public class QuickSort {
     // Randomized Quick Sort - TC: O(NlogN) | SC: O(logN) | Un-stable | In-place
     void sort(int[] A) {
-        int s = 0, e = A.length - 1;
-        quickSort(A, s, e);
+        quickSort(A, 0, A.length - 1);
     }
 
-    void quickSort(int[] A, int s, int e) {
-        if (s >= e)
+    void quickSort(int[] A, int l, int h) {
+        if (l >= h)
             return;
-        int randIdx = getRandomIndex(s, e);
-        swap(A, s, randIdx);
-        int p = partition(A, s, e);
-        quickSort(A, s, p - 1);
-        quickSort(A, p + 1, e);
+        int randIdx = getRandomIndex(l, h);
+        swap(A, l, randIdx);
+        int p = partition(A, l, h);
+        quickSort(A, l, p - 1);
+        quickSort(A, p + 1, h);
     }
 
-    int partition(int[] A, int s, int e) {
-        int l = s + 1, r = e;
-        while (l <= r) {
-            if (A[l] <= A[s]) {
-                l++;
-            } else if (A[r] > A[s]) {
-                r--;
+    int partition(int[] A, int l, int h) {
+        int s = l + 1, e = h;
+        while (s <= e) {
+            if (A[s] <= A[l]) {
+                s++;
+            } else if (A[e] > A[l]) {
+                e--;
             } else {
-                swap(A, l, r);
-                l++;
-                r--;
+                swap(A, s, e);
+                s++;
+                e--;
             }
         }
-        swap(A, s, r);
-        return r;
+        swap(A, l, e);
+        return e;
     }
 
     void swap(int[] A, int i, int j) {
@@ -43,13 +42,5 @@ public class QuickSort {
     int getRandomIndex(int s, int e) {
         Random random = new Random();
         return random.nextInt(e - s + 1) + s;
-    }
-
-    public static void main(String[] args) {
-        int[] a = {2,3,5,7,1};
-        QuickSort s = new QuickSort();
-        s.sort(a);
-        for(int x: a)
-            System.out.print(x + " ");
     }
 }
