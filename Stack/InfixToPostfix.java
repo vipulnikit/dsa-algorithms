@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class InfixToPostfix {
+    // TC: O(n) | SC:O(n)
     String infixToPostfix(String A) {
         HashMap<Character, Integer> precedence = new HashMap<>();
         precedence.put('^', 3);

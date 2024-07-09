@@ -20,6 +20,8 @@ public class LRUCache {
         keyValueMap = new HashMap<>();
     }
     
+    // TC of all methods: O(1)
+    // SC: O(capacity)
     public int get(int key) {
         if (keyValueMap.containsKey(key)) {
             ListNode valueNode = keyValueMap.get(key);
